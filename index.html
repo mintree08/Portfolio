@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이다경_Portfolio</title>
+    <link rel="stylesheet" href="/style/index.css">
+
+</head>
+<body>
+        <!--본문바로가기  -->
+        <div id="skipNavi"><a href="#container">본문으로 바로가기</a></div>
+        <!-- //본문 바로가기 -->
+    <div id="wrap">
+        <main id="container">
+            <div class="main">
+                <div class="main_inner">
+                    <h1>Portfolio</h1>
+                    <p>Simple하지만 Flat하지 않은</p>
+                    <p>UI Developer</p>
+                </div>
+            </div>
+        </main>
+            <div class="content fir">
+                <div class="content1_L">
+                    <h2>PROJECT 01</h2>
+                    <dl>
+                        <dt>Project Summary</dt>
+                        <dd>
+                            웹 표준, 웹 접근성에  준수하는<br />
+                            삼성전기 기업 사이트 구현
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Language</dt>
+                        <dd>HTML, CSS, JavaScript</dd>
+                    </dl>
+                    <span class="git"><a href="#">GitHub</a></span>
+                </div>
+                <div class="content_R">
+                    <div class="page">
+                        <ul>
+                            <li>문의 페이지</li>
+                            <li>메인 페이지</li>
+                            <li>채용 공고 페이지</li>
+                        </ul>
+                    </div>
+                    <ul class="display">
+                        <li class="QnA"><a href="#"><img src="imgs/삼성전기_문의페이지.JPG" alt="삼성전기_문의페이지"></a></li> 
+                        <li class="recruit"><a href="#"><img src="imgs/삼성전기_채용공고페이지.JPG" alt="삼성전기_채용공고페이지"></a></li>
+                        <li class="main_pag"><a href="#"><img src="imgs/삼성전기_메인페이지.JPG" alt="삼성전기_메인페이지"></a></li>
+                        
+                    </ul>
+                    <dl>
+                        <dt>삼성전기</dt>
+                        <dd>웹 표준, 웹접근성</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="content sec">
+                <div class="content2_L">
+                    <h2>PROJECT 02</h2>
+                    <dl>
+                        <dt>Project Summary</dt>
+                        <dd>
+                            PC,태블릿,모바일 크기의<br />
+                            CJ ONE 반응형 기업 사이트 구현
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Language</dt>
+                        <dd>HTML, CSS, JavaScript</dd>
+                    </dl>
+                    <span class="git"><a href="#">GitHub</a></span>
+                </div>
+                <div class="content_R">
+                    <dl>
+                        <dt>CJ  ONE</dt>
+                        <dd>반응형 웹</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="content thir">
+                <div class="content3_L">
+                    <h2>PROJECT 03</h2>
+                    <dl>
+                        <dt>Project Summary</dt>
+                        <dd>
+                            React 라이브러리로 <br />
+                            카카오톡 앱 구현
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Language</dt>
+                        <dd>HTML, CSS, JavaScript</dd>
+                    </dl>
+                    <span class="git"><a href="#">GitHub</a></span>
+                </div>
+                <div class="content_R">
+                    <dl>
+                        <img src="imgs/Phone.png">
+                        <dt>카카오톡 KaKao Talk</dt>
+                        <dd>React.js</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="content forth">
+                <div class="content4_L">
+                    <h2>PROJECT 04</h2>
+                    <dl>
+                        <dt>Project Summary</dt>
+                        <dd>
+                            Css만으로 라이언 캐릭터 구현
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Language</dt>
+                        <dd>CSS</dd>
+                    </dl>
+                </div>
+                <div class="content_R">
+                    <dl>
+                        <div id="ryan"></div>
+                        <dt>라이언</dt>
+                        <dd>React.js</dd>
+             
+                    </dl>
+                </div>
+            </div>
+            
+    </div>
+    <script>
+        async function fetchHtmlAsText(url) {
+            const response = await fetch(url);
+            return await response.text();
+        }
+        
+        async function importPage(target) {
+            document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html');
+        }
+        importPage('ryan');
+        </script>
+</body>
+</html>
