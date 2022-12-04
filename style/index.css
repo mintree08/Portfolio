@@ -19,7 +19,7 @@ a{
 }
 #container{ 
     width: 100vw;
-    height: 100vh;
+    height: 930px;
     position: relative;
     margin: 0 0;
     padding: 0 0;
@@ -68,21 +68,24 @@ dt{
 .git, .view{
     display: inline-block;
     position: relative;
-    width: 120px;
-    height: 40px;
-    line-height: 2;
-    /* padding: 5px 30px; */
+    width: 100px;height: 30px;
+    margin-top: 30px;
+    margin-right: -7px;
+    padding: 5px;
+    line-height: 1.5;
+    transform-origin: center;
     transform: translateY(50px);
-    border: 1px solid black;
-    border-radius: 15px;
-    text-align: center;
+    border: 1px solid #bcbcbc;
     z-index: 100;
-    opacity: 0.5;
+    text-align: center;
 }
-.git:hover, .view:hover{
-    opacity: 1;
+.git:hover, .view:hover{ 
+    box-shadow: 0 0 15px #d7bda7;
 }
-
+.git>a, .view>a{
+    color: #3e3e3e;
+    font-weight: 800;
+}
 .content_R{
     position: relative;
     margin-left: 700px;
@@ -95,17 +98,20 @@ dt{
     z-index: -3;
     background: #F8F1EB;
     border-radius: 50%;  
+    box-shadow: 0 5px 50px rgba(138, 118, 101, 0.5);
 }
 
 .content_R>dl{
-    margin-left: 0;
-    transform: translateY(-70px);
+   position: absolute;
+   left: 290px;
+   text-align: center;
+   transform: translateY(-70px);
 }
 /* // common // */
 /* 메인 */
 .main{
     width: 90%;
-    height:80%;
+    height:750px;
     position: absolute;
     background-color: #FFFEFC;
     justify-content: center;  
@@ -117,10 +123,12 @@ dt{
     height: 100%;
 }
 .main_inner>h1{
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    width: 1605px;
+    height: 800px;
+    position: relative;
     display: inline-block;
+    top: -30px;
+    left: 80px;
     font-size: 120px;
     text-indent: -999px;
     overflow: hidden;
@@ -132,85 +140,75 @@ dt{
 }
 
 .main_inner>p{
-    width: 100%;
-    position: absolute;
+    width: 1735px;
+    position: relative;
+    top: -370px;
+    left: 20px;
+    bottom: 10px;
     text-align: center;
     color: #77614A;
-    top: 58%;
 }
 .main_inner>.sub_title{
-    animation: subtitle 1s ease-out;
+    animation: subtitle 0.8s ease-out;
     position: relative;
 }
 @keyframes subtitle{
     0%{
         transform: translateY(30px);
-        opacity: 0;
     }
-    /* 50%{
-        opacity: 0;
+    30%{
     }
-    90%{
-        opacity: 1;
-    } */
     100%{
         transform: translateY(0);
-        opacity: 1;
     }
 }
-.main_inner::after{
-    content: '';display: block;position: absolute;
-    width: 1000px;height: 50px;
-    top: 62%;
-    background-color: #FFFEFC;
-}
-
-
 .main_inner>p:nth-last-of-type(1){
-    transform: translateX(4px) translateY(900%);
+    transform: translateX(2px) translateY(150px);
     font-size: 17.5px;
     text-align: center;  
     z-index: 1; 
-    animation: job 1.5s ease-out;
+    animation: job 1.5s ease-in-out;
 }
 @keyframes job{
     0%{
-        transform:translateX(4px) translateY(1000%);
-        opacity: 0;
-    }
-    50%{
-        opacity: 0;
+        transform:translateX(2px) translateY(190px);
     }
     100%{
-        transform:translateX(4px) translateY(900%);
-        opacity: 1;
+        transform:translateX(2px) translateY(150px);
+
     }
 }
-.main_inner>h1::before{
-    content: "";position: absolute;display: inline-block; 
-    left: 40%;bottom: 55px;
-    width: 350px;height: 20px;
+.main_inner::after{
+    content: '';display: block;position: relative;
+    width: 1000px;height: 50px;
+    top: -385px;left: 300px;
     background-color: #FFFEFC;
-    z-index: 2;
-    transition: bottom ;
-}
 
+}
+.main_inner>h1::before{
+    content: "";position: relative;display: inline-block;
+    left: 950px; bottom: -585px;
+    transform: translateX(700px);
+    width: 350px;height: 40px;
+    background-color:  #FFFEFC;
+    z-index: 2;
+}
 .main_inner>h1::after{/*화살표*/
-    content: "";position: absolute;display: inline-block; 
-    left: 50%;bottom: 0; 
+    content: "";position: relative;display: inline-block; 
+    left: 995px;bottom: -625px; 
     width: 50px;height: 50px;
     z-index: 3;
     background: url(../imgs/Arrow1.png) no-repeat 0 0;
     background-size: 11px; 
     opacity: 0;
-    animation:arrow 1s ease-in infinite alternate 1.5s; 
+    animation:arrow 1s ease-in infinite alternate 1s; 
 }
 @keyframes arrow{
     0%{
         transform: translateY(-25px);
-        opacity: 1;
+        opacity: 0;
     }
-    50%{
+    30%{
         opacity: 1;
     }
     100%{
@@ -221,18 +219,49 @@ dt{
 
 .main>.contact{
     position: absolute;
-    right: 10px;
-    bottom: -20px;
+    right: -10px;
+    top: -70px;
 }
 .main>.contact>button{
     position: fixed;
-    width: 100px;height: 50px;
-    border-radius: px;
-    border: 1px solid #77614A;
+    width: 80px;height: 50px;
+    border: 1.5px solid #77614A;
     background-color: #fff;
+    border-radius: 20px 0 0 20px;
     color: #77614A;
     text-align: center;
     z-index: 100;
+    animation: contact 2s ease ;
+}
+@keyframes contact{
+    0%{
+        transform: translateX(50px);
+        background-color: #77614A;
+        color: #fff;
+    }
+    10%{
+        background-color: #fff;
+        color: #77614A;
+    }
+    20%{
+        background-color: #77614A;
+        color: #fff;
+    }
+    30%{
+        background-color: #fff;
+        color: #77614A;
+    }
+    40%{
+        background-color: #77614A;
+        color: #fff;
+    }
+    50%{
+        background-color: #fff;
+        color: #77614A;
+    }
+    100%{
+        transform: translateX(0);
+    }
 }
 .main>.contact>button:hover{
     background-color: #8f7c67;
@@ -265,6 +294,12 @@ dt{
     overflow: hidden;
     margin-top: -265px;
     border: 1px solid #d5d4d4;
+    transition: scale 0.5s ease;
+    transform-origin: center;
+}
+.fir>.content_R>.display>li:hover{
+    box-shadow: 0 5px 35px #d7bda7;
+    scale: 1.05;
 }
 .fir>.content_R>ul>li>a>img{/*페이지 이미지*/
     width: 400px;
@@ -275,7 +310,11 @@ dt{
     height: 280px;
     margin-left: -40px;
     margin-top: -275px;
+    z-index: 3;
     box-shadow: 0 8px 35px 0 #1A1818;   
+}
+.fir>.content_R>.display>li:nth-last-of-type(1):hover{
+    box-shadow: 0 5px 35px #d7bda7;
 }
 .fir>.content_R>ul>li:nth-last-child(1)>a>img{/*메인페이지 이미지*/
     width:500px;
@@ -319,12 +358,18 @@ dt{
 /* CJONE */
 .sec>.content_R>div.cj_pg{
     position: relative;
-    transform: translateX(150px) translateY(-400px);
+    transform: translateX(140px) translateY(-400px);
+}
+.sec>.content_R>dl{
+    left: 320px;
 }
 .sec>.content_R>div.cj_pg::before{/* CJONE 태블릿 목업*/
     content: "";display: block;position: absolute;
     width: 1800px;height: 600px;
     background:url(../imgs/tab.png)no-repeat 0 0;
+}
+.sec>.content_R>div.cj_pg>.cj1:hover{
+    box-shadow: 0 5px 35px #94dfff;
 }
 .sec>.content_R>div.cj_pg>.cj1{
     width: 323px;height: 300px;
@@ -332,11 +377,12 @@ dt{
     transform: translateX(622px) translateY(105px);
     border-radius: 0 10px 10px 0;  
 }
+
 .sec>.content_R>div.cj_pg>.cj1>img{/* CJONE 태블릿 페이지*/
     width: 323px;
     transform-origin: right;
     animation: cj_tab 10s ease-in-out infinite alternate  ;
-}
+}    
 @keyframes cj_tab{
     0%{
         transform: translateY(0);
@@ -402,28 +448,29 @@ dt{
 }
 /* //CJONE// */
 /* 일룸 placer */
-.thir>.content_R>dl::before{/*노트북 목업*/
-    content: '';
-    display: block;
-    left: 185px; top: -350px;
+.thir>.content_R>dl{
+    left: -250px;
+}
+.thir>.content_R>dl::before{/* 일룸 노트북 목업*/
+    content: '';display: block;position: absolute;
     width: 1007px;height: 550px;
     background: url(../imgs/notebook.png) no-repeat 0 0;
-    transform:translateX(185px) translateY(-490px);
+    transform:translateX(195px) translateY(-490px);
 }
-.thir>.content_R>dl>div{ /**/
+.thir>.content_R>dl>div{ 
     display: inline-block;
     width: 570px;
     height: 364px;
     position: absolute;
     top: -289px;
-    left: 314px;
+    left: 324px;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
 }
 .thir>.content_R>dl>dt, .thir>.content_R>dl>dd{
-    transform: translateY(-530px);
+    transform:translateX(540px) translateY(30px);
 }
-.thir>.content_R>dl>div>img{
+.thir>.content_R>dl>div>img{/*일룸 페이지*/
     position: absolute;
     width: 590px;
     object-fit: contain;
@@ -437,9 +484,100 @@ dt{
         transform: translateX(-290px) translateY(-4320px);
     }
 }
-/* fifth */
+/* LocknLock */
+.fourth>.content_R>div.lnl_pg{
+    transform:translateX(140px) translateY(-420px);
+}
+.fourth>.content_R>div.lnl_pg::before{/* LocknLock 태블릿 목업*/
+    content: "";display: block;position: absolute;
+    width: 1800px;height: 500px;
+    background:url(../imgs/tab.png)no-repeat 0 0;
+}
+.fourth>.content_R>div.lnl_pg>.lnl1{
+    width: 323px;height: 300px;
+    overflow: hidden;
+    transform: translateX(622px) translateY(105px);
+    border-radius: 0 10px 10px 0;  
+}
 
+.fourth>.content_R>div.lnl_pg>.lnl1>img{/* LocknLock 태블릿 페이지*/
+    width: 323px;
+    transform-origin: right;
+    animation: lnl_tab 15s ease-in-out infinite alternate  ;
+}    
+@keyframes lnl_tab{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-3680px);
+    }
+}
+.fourth>.content_R>div.lnl_pg>.lnl2::before{/* LocknLock 노트북 목업*/
+    content: "";display: block;position: absolute;
+    width: 1007px;height: 555px;
+    background: url(../imgs/notebook.png)no-repeat 0 0;
+    transform:translateX(-90px) translateY(-300px);
+}
+.fourth>.content_R>div.lnl_pg>.lnl2>div{
+    position: absolute;
+    width: 572px;height: 360px;
+    transform: translateX(38px) translateY(-235px);
+    transform-origin: left;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.fourth>.content_R>div.lnl_pg>.lnl2>div>img{/* LocknLock 노트북 페이지*/
+    width: 573px;object-fit: contain;
+    animation: lnl_mob 15s ease-in-out infinite alternate  ;
+}
+@keyframes lnl_mob{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-2750px);
+    }
+}
+/*.fourth>.content_R>div.lnl_pg>.lnl3::before{/* LocknLock 모바일 목업
+    content: "";display: block;position: absolute;
+    width: 1007px;height: 555px;
+    background: url(../imgs/Phone1.png)no-repeat 0 0;
+    transform:translateX(-20px) translateY(-250px);
+}
+.fourth>.content_R>div.lnl_pg>.lnl3>div{
+    position: absolute;
+    width: 255px;height: 280px;
+    transform: translateX(459px) translateY(-97px);
+    transform-origin: left;
+    border-radius: 18px;
+    overflow: hidden;
+}
+.fourth>.content_R>div.lnl_pg>.lnl3>div>img{/* LocknLock 모바일 페이지
+    position: absolute;
+    width: 130px;
+    animation: lnl_mob 10s ease-in-out infinite alternate  ;
+
+}
+@keyframes lnl_mob{
+    0%{}
+    100%{}
+}
+*/
+.fourth>.content_R>dl{
+    transform: translateY(-370px);
+}
 /*   ryan     */
 #ryan{
-    transform: translateX(290px) translateY(50px);
+    transform: translateX(-280px) translateY(50px);
+}
+.five>.content_R>dl{
+    left: 330px;
+}
+/* Contact */
+#contact{
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    display: none;
 }
