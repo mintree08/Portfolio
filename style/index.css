@@ -557,7 +557,6 @@ dt{
     position: absolute;
     width: 130px;
     animation: lnl_mob 10s ease-in-out infinite alternate  ;
-
 }
 @keyframes lnl_mob{
     0%{}
@@ -568,11 +567,14 @@ dt{
     transform: translateY(-370px);
 }
 /*   ryan     */
-#ryan{
-    transform: translateX(-280px) translateY(50px);
+.five>.content_R::before{
+    display: none;
 }
-.five>.content_R>dl{
-    left: 330px;
+#ryan{
+    transform: translateX(-250px) translateY(50px);
+}
+#facebook_emoji{
+    transform: translateX(-430px) translateY(20px);
 }
 /* Contact */
 #contact{
