@@ -12,7 +12,7 @@ body{
     font-family: 'AAppleSDGothicNeoUL', sans-serif;
     font-size: 20px;
     font-weight: 400;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 a{
     color: #1A1818;
@@ -50,6 +50,9 @@ h2::after{
 }
 .content{
     height: 1080px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1.5s ease-in;
 }
 dl,.git{
     position: relative;
@@ -65,12 +68,16 @@ dl:nth-of-type(2){
 dt{
     font-weight: 800;  
 }
+dd{
+    margin-top: 5px;
+    font-size: 16px;
+}
 .git, .view{
     display: inline-block;
     position: relative;
     width: 100px;height: 30px;
     margin-top: 30px;
-    margin-right: -7px;
+    margin-right: -7.2px;
     padding: 5px;
     line-height: 1.5;
     transform-origin: center;
@@ -79,7 +86,23 @@ dt{
     z-index: 100;
     text-align: center;
 }
-.git:hover, .view:hover{ 
+.wcs{
+    display: inline-block;
+    position: relative;
+    width: 170px;height: 30px;
+    margin-top: 30px;
+    margin-left: -1px;
+    padding: 5px;
+    line-height: 1.5;
+    transform-origin: center;
+    transform: translateY(50px);
+    border: 1px solid #bcbcbc;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 100;
+    text-align: center;
+}
+.git:hover, .view:hover, .wcs:hover{ 
     box-shadow: 0 0 15px #d7bda7;
 }
 .git>a, .view>a{
@@ -216,13 +239,13 @@ dt{
         opacity: 1;
     }
 }
-
-.main>.contact{
+/* contact_btn
+.main>.contact_btn{
     position: absolute;
     right: -10px;
     top: -70px;
 }
-.main>.contact>button{
+.main>.contact_btn>button{
     position: fixed;
     width: 80px;height: 50px;
     border: 1.5px solid #77614A;
@@ -231,9 +254,9 @@ dt{
     color: #77614A;
     text-align: center;
     z-index: 100;
-    animation: contact 2s ease ;
+    animation: contact_btn 2s ease ;
 }
-@keyframes contact{
+@keyframes contact_btn{
     0%{
         transform: translateX(50px);
         background-color: #77614A;
@@ -263,18 +286,23 @@ dt{
         transform: translateX(0);
     }
 }
-.main>.contact>button:hover{
+.main>.contact_btn>button:hover{
     background-color: #8f7c67;
     border: 1px solid #77614A;
     color: #fff;
-}
+} */
 /* //메인// */
 /* 삼성전기 */
 .content1_L{
     width: 750px;
     display: inline-block;
 }
-
+.content1_L>dl{
+    transform: translateY(65px);
+}
+.content1_L>span{
+    transform: translateY(100px);
+}
 .fir>.content_R>.page>ul{
     display: flex;
     margin-left: 55px;
@@ -503,7 +531,7 @@ dt{
 .fourth>.content_R>div.lnl_pg>.lnl1>img{/* LocknLock 태블릿 페이지*/
     width: 323px;
     transform-origin: right;
-    animation: lnl_tab 15s ease-in-out infinite alternate  ;
+    animation: lnl_tab 16s ease-in-out infinite alternate  ;
 }    
 @keyframes lnl_tab{
     0%{
@@ -529,7 +557,7 @@ dt{
 }
 .fourth>.content_R>div.lnl_pg>.lnl2>div>img{/* LocknLock 노트북 페이지*/
     width: 573px;object-fit: contain;
-    animation: lnl_mob 15s ease-in-out infinite alternate  ;
+    animation: lnl_mob 15s ease-in-out infinite alternate 2s;
 }
 @keyframes lnl_mob{
     0%{
@@ -557,6 +585,7 @@ dt{
     position: absolute;
     width: 130px;
     animation: lnl_mob 10s ease-in-out infinite alternate  ;
+
 }
 @keyframes lnl_mob{
     0%{}
@@ -578,8 +607,33 @@ dt{
 }
 /* Contact */
 #contact{
-    position: absolute;
-    width: 1000px;
-    height: 1000px;
-    display: none;
+    margin: 0 0;
+    padding: 0 0;
+    width: 100%;height: 100vh;
+    display: flex;flex-direction: column;
 }
+.page-wrapper{
+    width: 100%;
+    height: 100vh;
+}
+.page-wrapper>.back{
+    position: absolute;
+    width: 1850px;height: 950px;
+    background-color: #fff;
+    padding: 10px;
+    left: 100px;
+    box-sizing: border-box;
+}
+.page-wrapper>.back>.info{
+    position: relative;
+    width: 100%;height: 900px;
+    margin-bottom: 50px;
+    /* background-color: rgba(141, 414, 241, 0.5); */
+    background-image: url(../imgs/contact.png);
+    background-repeat: no-repeat;
+    background-size: 1750px;
+    object-fit: contain;
+    transform: translateX(-40px);
+}
+
+
