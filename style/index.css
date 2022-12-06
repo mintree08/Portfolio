@@ -1,15 +1,19 @@
 @import url(reset.css);
 /* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;900&family=Playfair+Display:wght@400;600;800&family=Roboto+Condensed:wght@300;400;700&display=swap');
 @font-face{
     font-family: AppleSDGothicNeoUL;
     src: url(../font/AppleSDGothicNeoUL.ttf);
+    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display SC', serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 /* common */
 body{   
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: 'AAppleSDGothicNeoUL', sans-serif;
+    font-family: 'AppleSDGothicNeoUL', sans-serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: -0.5px;
@@ -19,7 +23,7 @@ a{
 }
 #container{ 
     width: 100vw;
-    height: 930px;
+    height: 950px;
     position: relative;
     margin: 0 0;
     padding: 0 0;
@@ -28,7 +32,9 @@ a{
 h2{
     display: inline-block;
     position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 40px;
+    font-weight: 900;
     color: #77614A;
     padding: 83px 68px;
 }
@@ -51,6 +57,7 @@ h2::after{
 .content{
     height: 1080px;
     opacity: 0;
+    margin-top: 6px;
     transform: translateY(100px);
     transition: all 1.5s ease-in;
 }
@@ -66,55 +73,21 @@ dl:nth-of-type(2){
     padding-top: 53px;
 }
 dt{
-    font-weight: 800;  
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;  
 }
 dd{
     margin-top: 5px;
     font-size: 16px;
 }
-.git, .view{
-    display: inline-block;
-    position: relative;
-    width: 100px;height: 30px;
-    margin-top: 30px;
-    margin-right: -7.2px;
-    padding: 5px;
-    line-height: 1.5;
-    transform-origin: center;
-    transform: translateY(50px);
-    border: 1px solid #bcbcbc;
-    z-index: 100;
-    text-align: center;
-}
-.wcs{
-    display: inline-block;
-    position: relative;
-    width: 170px;height: 30px;
-    margin-top: 30px;
-    margin-left: -1px;
-    padding: 5px;
-    line-height: 1.5;
-    transform-origin: center;
-    transform: translateY(50px);
-    border: 1px solid #bcbcbc;
-    font-size: 20px;
-    font-weight: 700;
-    z-index: 100;
-    text-align: center;
-}
-.git:hover, .view:hover, .wcs:hover{ 
-    box-shadow: 0 0 15px #d7bda7;
-}
-.git>a, .view>a{
-    color: #3e3e3e;
-    font-weight: 800;
-}
+
 .content_R{
     position: relative;
     margin-left: 700px;
     text-align: center;
-
+    transform: translateY(-100px);
 }
+
 .content_R::before{ /*원형 */
     content: "";position: absolute; top: -450px; left: 250px; 
     width: 700px; height: 700px; 
@@ -130,6 +103,110 @@ dd{
    text-align: center;
    transform: translateY(-70px);
 }
+/* --------------------------------------------------버튼 */
+.frame {
+    width: 90%;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 240px;
+    /* margin: 40px 0; */
+    text-align: center;
+    
+  }
+  button {
+    margin-right: 10px; 
+  }
+  button>a>span{
+    color: #fff;
+  }
+  .custom-btn {
+    width: 180px;
+    height: 40px;
+    color: #fff;
+    padding: 10px 25px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     0 0 20px 0px rgba(32, 32, 15, 0.2),
+     0 0 5px 0px rgba(0,0,0,0.1);
+     outline: none;
+  } 
+  .btn-3 {/*호버 전*/
+    background: #fff;
+    background: linear-gradient(45deg,rgb(221, 220, 220)50%);
+
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-3:before,
+  .btn-3:after { /*호버 후*/
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    background:  linear-gradient(45deg, rgb(79, 180, 234) 0%, rgb(250, 228, 190) 100%);
+    transition: all 0.3s ease;
+  }
+  .btn-3:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-3:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3:hover{
+     background: transparent;
+    box-shadow: none;
+  }
+  .btn-3:hover:before {
+    height: 100%;
+  }
+  .btn-3:hover:after {
+    width: 100%;
+  }
+  .btn-3 span:hover{
+     color:black;
+  }
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: linear-gradient(45deg, rgb(253, 203, 255) 0%, rgb(251, 190, 121) 100%);
+    transition: all 0.3s ease;
+  }
+  .btn-3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3 span:hover:before {
+    height: 100%;
+  }
+  .btn-3 span:hover:after {
+    width: 100%;
+  }
 /* // common // */
 /* 메인 */
 .main{
@@ -178,8 +255,6 @@ dd{
 @keyframes subtitle{
     0%{
         transform: translateY(30px);
-    }
-    30%{
     }
     100%{
         transform: translateY(0);
@@ -293,15 +368,12 @@ dd{
 } */
 /* //메인// */
 /* 삼성전기 */
-.content1_L{
+.content_L{
     width: 750px;
     display: inline-block;
 }
-.content1_L>dl{
+.content_L>dl{
     transform: translateY(65px);
-}
-.content1_L>span{
-    transform: translateY(100px);
 }
 .fir>.content_R>.page>ul{
     display: flex;
@@ -324,6 +396,7 @@ dd{
     border: 1px solid #d5d4d4;
     transition: scale 0.5s ease;
     transform-origin: center;
+    box-shadow: 0 8px 35px 0 #878787;  
 }
 .fir>.content_R>.display>li:hover{
     box-shadow: 0 5px 35px #d7bda7;
@@ -339,7 +412,6 @@ dd{
     margin-left: -40px;
     margin-top: -275px;
     z-index: 3;
-    box-shadow: 0 8px 35px 0 #1A1818;   
 }
 .fir>.content_R>.display>li:nth-last-of-type(1):hover{
     box-shadow: 0 5px 35px #d7bda7;
@@ -595,8 +667,40 @@ dd{
 .fourth>.content_R>dl{
     transform: translateY(-370px);
 }
+/* 피그마 앱 기획 */
+
+.fifth>.content_R>.figma>.pdf{/*피그마 테두리*/
+    width: 700px;height: 400px;
+    transform: translateX(250px) translateY(-310px);
+    transform-origin: left;
+    overflow: hidden;
+    border: 1px solid rgb(200, 200, 200);
+    opacity: 1;
+    z-index: 10;
+}
+
+.fifth>.content_R>.figma>.pdf>img{/*피그마 페이지*/
+    width: 700px;
+    z-index: 9;
+    animation: pdf 130s ease-in-out infinite alternate;
+}
+@keyframes pdf{
+    0%{
+        transform: translateY(-300px);
+    }
+    100%{
+        transform: translateY(-6670px);
+    }
+}
+.fifth>.content_R>dl{
+    transform:translateX(17px) translateY(-450px);
+}
 /*   ryan     */
-.five>.content_R::before{
+.six{
+    position: relative;
+    height: 930px;
+}
+.six>.content_R::before{
     display: none;
 }
 #ryan{
@@ -607,10 +711,10 @@ dd{
 }
 /* Contact */
 #contact{
-    margin: 0 0;
-    padding: 0 0;
-    width: 100%;height: 100vh;
-    display: flex;flex-direction: column;
+    position: relative;;
+    width: 100%;height: 100%;
+    margin-top: 1000px;
+ 
 }
 .page-wrapper{
     width: 100%;
@@ -631,9 +735,10 @@ dd{
     /* background-color: rgba(141, 414, 241, 0.5); */
     background-image: url(../imgs/contact.png);
     background-repeat: no-repeat;
-    background-size: 1750px;
+    background-size: 1800px;
     object-fit: contain;
     transform: translateX(-40px);
+   
 }
 
 
