@@ -388,10 +388,10 @@ dd{
     text-align: center;
     transform-origin: center;
 }
-.fir>.content_R>.display, .fir>.content_R>.sam_tab{/*전체 목업 위치*/
+.fir>.content_R>.display{/*전체 목업 위치*/
     transform: translateX(30px);
 }
-.fir>.content_R>.display>li{ /*공통 페이지 테두리  overflow: hidden */
+/* .fir>.content_R>.display>div{ /*공통 페이지 테두리  overflow: hidden 
     display: inline-block;
     position: absolute;
     width: 355px;
@@ -402,15 +402,16 @@ dd{
     transform-origin: left;
     border: 2px solid black;
     border-radius: 10px;
-}
-.fir>.content_R>ul>li>img{/*공통 페이지 이미지 사이즈*/
+} */
+.fir>.content_R>.display>div>img,
+.fir>.content_R>.display>div>div>img{/*공통 페이지 이미지 사이즈*/
     width: 355px;
     transform-origin: left;
 }
 
 
 /*문의페이지*/
-.fir>.content_R>ul>.QnA{/*문의페이지 위치*/
+.fir>.content_R>div>.QnA{/*문의페이지 위치*/
     transform: translateX(-505px) translateY(52px);
 }
 .fir>.content_R>.display::before{/*문의 목업*/
@@ -421,7 +422,7 @@ dd{
     transform:translateX(-327px) translateY(-300px);
 }
 
-.fir>.content_R>ul>.QnA>img{/*문의페이지 이미지 애니메이션*/
+.fir>.content_R>div>.QnA>img{/*문의페이지 이미지 애니메이션*/
     animation: QnA 10s ease-in-out infinite alternate; 
 }
 @keyframes QnA{
@@ -429,41 +430,51 @@ dd{
     100% {transform: translateY(-572px);}
 }
 /*채용공고페이지*/
-.fir>.content_R>ul>.recruit{/*채용공고 페이지 위치*/
-    transform: translateX(90px) translateY(50px);
-}
-.fir>.content_R>.display::after{/*채용공고  목업*/
+.fir>.content_R>div.display::before{/*채용공고 목업*/
     content: "";display: block;position: absolute;
-    width: 840px;height: 450px; z-index: -1;
+    width: 840px;height: 450px; z-index: -2;
     background: url(../imgs/tab.png)no-repeat 0 0;
     background-size: 800px;
     transform:translateX(270px) translateY(-300px);
 }
-.fir>.content_R>ul>.recruit>img{
-    animation: recruit 10s ease-in-out infinite alternate; 
+.fir>.content_R>div.display>.recruit>.div{
+ 
 }
+
+.fir>.content_R>div.display>.recruit>.div>img{ /*채용공고 페이지 */
+    width: 323px;height: 300px;
+    /* transform: translateX(622px) translateY(105px); */
+    transform-origin: right;
+    animation: recruit 10s ease-in-out infinite alternate;
+   background-color: red;
+}    
 @keyframes recruit{
     0% {transform: translateY(0px);}
     100% {transform: translateY(-55px);}
 }
+
 /*메인페이지*/
-.fir>.content_R>ul>.main_pag{/*메인페이지 위치*/
-    transform: translateX(-200px) translateY(48px);
-    position: absolute;z-index: 10;
+.fir>.content_R>div>.main_pag{/*메인페이지 위치*/
+    transform: translateX(-200px) translateY(50px);
+    position: absolute;z-index: 10;background-color: yellow;
 }
-.fir>.content_R>.sam_tab>img{/*메인 목업*/
+.fir>.content_R>.display>.main_pag>div{/*메인 목업*/
     position: relative;
     width: 818px;height: 451px;
+    background: url(../imgs/tab.png);
     object-fit: contain;
     transform:translateX(-230px) translateY(-347px);
-    z-index: -1;
 }
-.fir>.content_R>ul>.main_pag>img{
+.fir>.content_R>.display>.main_pag>div>img{/*메인페이지 애니메이션*/
     animation: main_pag 10s ease-in-out infinite alternate; 
 }
 @keyframes main_pag{/*메인 애니메이션*/
-    0% {transform: translateY(0px);}
-    100% {transform: translateY(-580px);}
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-450px);
+    }
 }
 /* //삼성전기// */
 /* CJONE */
@@ -478,9 +489,6 @@ dd{
     content: "";display: block;position: absolute;
     width: 1800px;height: 600px;
     background:url(../imgs/tab.png)no-repeat 0 0;
-}
-.sec>.content_R>div.cj_pg>.cj1:hover{
-    box-shadow: 0 5px 35px #94dfff;
 }
 .sec>.content_R>div.cj_pg>.cj1{
     width: 323px;height: 300px;
@@ -531,8 +539,10 @@ dd{
 .sec>.content_R>div.cj_pg>.cj3::before{/* CJONE 모바일 목업*/
     content: "";display: block;position: absolute;
     width: 1007px;height: 555px;
-    background: url(../imgs/Phone1.png)no-repeat 0 0;
-    transform:translateX(-20px) translateY(-250px);
+    background: url(../imgs/Phone.png)no-repeat 0 0;
+    background-size: 145px 295px;
+    transform:translateX(578px) translateY(-105px);
+    transform-origin: left;
 }
 .sec>.content_R>div.cj_pg>.cj3>div{
     position: absolute;
@@ -652,9 +662,10 @@ dd{
 }
 .fourth>.content_R>div.lnl_pg>.lnl3::before{/* LocknLock 모바일 목업*/
     content: "";display: block;position: absolute;
-    width: 1007px;height: 555px;
-    background: url(../imgs/Phone1.png)no-repeat 0 0;
-    transform:translateX(-20px) translateY(-250px);
+    width: 437px;height: 892px;
+    background: url(../imgs/Phone.png)no-repeat 0 0;
+    background-size: 150px 290px;
+    transform:translateX(570px) translateY(-100px);
 }
 .fourth>.content_R>div.lnl_pg>.lnl3>div{
     position: absolute;
