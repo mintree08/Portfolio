@@ -681,7 +681,7 @@ dd{
 }
 /* 피그마 앱 기획 */
 .fifth>.content_R>div.figma{
-    transform: translateY(-150px);
+    transform:translateX(-50px) translateY(-150px);
 }
 .fifth>.content_R>div.figma>.figma_p::before{/* 피그마 런치 목업*/
     content: "";display: block;position: absolute;
@@ -697,6 +697,9 @@ dd{
     transform: translateX(48px) translateY(-97px);
     border-radius: 13px;
 }
+.fifth>.content_R>div.figma>.figma_p>.figma_p2{
+    transform: translateX(20px);
+}
 .fifth>.content_R>div.figma>.figma_p>.figma_p2::before{/* 피그마 주방 목업*/
     content: "";display: block;position: absolute;
     width: 1007px;height: 555px;
@@ -710,7 +713,10 @@ dd{
     transform: translateX(-129px) translateY(-378px);
     border-radius: 13px;
 }
-.fifth>.content_R>div.figma>.figma_p>.figma_p2::before{/* 피그마 상세 목업*/
+.fifth>.content_R>div.figma>.figma_p>.figma_p3{
+    transform: translateX(330px) translateY(-280px);
+}
+.fifth>.content_R>div.figma>.figma_p>.figma_p3::before{/* 피그마 상세 목업*/
     content: "";display: block;position: absolute;
     width: 1007px;height: 555px;
     background: url(../imgs/Phone.png)no-repeat 0 0;
@@ -718,7 +724,7 @@ dd{
     transform:translateX(400px) translateY(-385px);
     transform-origin: left;
 }
-.fifth>.content_R>div.figma>.figma_p>.figma_p2>div>img{/* 피그마 상세 페이지*/
+.fifth>.content_R>div.figma>.figma_p>.figma_p3>div>img{/* 피그마 상세 페이지*/
     width: 130px;position: relative;
     transform: translateX(-129px) translateY(-378px);
     border-radius: 13px;
