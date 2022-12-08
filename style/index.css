@@ -683,7 +683,7 @@ dd{
 .fourth>.content_R>div.lnl_pg>.lnl1>img{/* LocknLock 태블릿 페이지*/
     width: 323px;
     transform-origin: right;
-    animation: lnl_tab 16s ease-in-out infinite alternate  ;
+    animation: lnl_tab 20s ease-in-out infinite alternate  ;
 }    
 @keyframes lnl_tab{
     0%{
@@ -701,22 +701,23 @@ dd{
 }
 .fourth>.content_R>div.lnl_pg>.lnl2>div{
     position: absolute;
-    width: 1007px;height: 360px;
-    transform: translateX(-110px) translateY(-235px);
+    width: 573px;height: 360px;
+    transform: translateX(36px) translateY(-237px);
     transform-origin: left;
-    border-radius: 3px;
+    border: 1px solid black;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
 }
 .fourth>.content_R>div.lnl_pg>.lnl2>div>img{/* LocknLock 노트북 페이지*/
     width: 573px;object-fit: contain;
-    animation: lnl_mob 15s ease-in-out infinite alternate 2s;
+    animation: lnl_pc 20s ease-in-out infinite alternate 2s;
 }
-@keyframes lnl_mob{
+@keyframes lnl_pc{
     0%{
         transform: translateY(0);
     }
     100%{
-        transform: translateY(-2750px);
+        transform: translateY(-2760px);
     }
 }
 .fourth>.content_R>div.lnl_pg>.lnl3::before{/* LocknLock 모바일 목업*/
@@ -738,7 +739,7 @@ dd{
 .fourth>.content_R>div.lnl_pg>.lnl3>div>img{/* LocknLock 모바일 페이지*/
     position: absolute;
     width: 135px;
-    animation: lnl_mob 10s ease-in-out infinite alternate  ;
+    animation: lnl_mob 20s ease-in-out infinite alternate  ;
 
 }
 @keyframes lnl_mob{
@@ -746,7 +747,7 @@ dd{
         transform:translateX(-68px) translateY(0);
     }
     100%{
-        transform:translateX(-68px) translateY(-1300px);
+        transform:translateX(-68px) translateY(-1375px);
     }
 }
 
