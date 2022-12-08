@@ -207,6 +207,60 @@ dd{
   .btn-3 span:hover:after {
     width: 100%;
   }
+/*--------------------------------------------------자막애니메이션*/
+.heading > dt{
+    width: 1000px;height: 30px;
+    overflow: hidden;
+  }
+/* .heading > dt > div {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 117%;
+  }  */
+  
+.heading > dt {
+    -webkit-animation-delay: 0;
+            animation-delay: 0;
+  }
+.heading > dt > .sec {
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+  }
+  
+.heading > dt {
+    -webkit-animation-delay: 0;
+            animation-delay: 0;
+  }
+.heading > dd > div{
+    -webkit-animation-delay: 0.075s;
+            animation-delay: 0.075s;
+  }
+  
+  .slide-up {
+    -webkit-animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+            animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+  }
+  
+  @-webkit-keyframes slide-up {
+    0% {
+      transform: translateY(100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 /* // common // */
 /* 메인 */
 .main{
@@ -400,13 +454,15 @@ dd{
     transform-origin: left;
 }
 
-/*문의페이지*/
+/*삼전 문의*/
 .fir>.content_R>.display::after{/* 삼전 문의 목업*/
     content: "";display: block;position: relative;
-    width: 940px;height: 450px; z-index: -1;
-    transform:translateX(-270px) translateY(-1450px);
+    width: 540px;height: 400px; z-index: -1;
+    transform-origin: right;
+    transform:translateX(130px) translateY(-1469px);
     background:url(../imgs/tab.png)no-repeat 0 0;
     background-size: 800px;
+    background-position: -400px;
 }
 .fir>.content_R>.display>.QnA{overflow: hidden;
     width: 330px;height: 250px;position: relative;
@@ -424,7 +480,7 @@ dd{
     0% {transform: translateY(0px);}
     100% {transform: translateY(-572px);}
 }
-/*채용공고페이지*/
+/*삼전 채용공고*/
 .fir>.content_R>div.display::before{/* 삼전 채용공고 목업*/
     content: "";display: block;position: relative;
     width: 840px;height: 450px; z-index: -2;
@@ -449,6 +505,7 @@ dd{
     0% {transform: translateY(0px);}
     100% {transform: translateY(-48px);}
 }
+/*삼전 메인*/
 .fir>.content_R>div.display>.main_pag::before{/* 삼전 메인 목업*/
     content: "";display: block;position: relative;
     transform:translateX(0) translateY(-1000px);
@@ -472,8 +529,11 @@ dd{
         transform: translateY(-455px);
     }
 }
-
-/*메인페이지*/
+.fir>.content_R>dl{
+    position: absolute;
+    margin-top: -1580px;
+    margin-left: 230px;
+}
 
 /* //삼성전기// */
 /* CJONE */
