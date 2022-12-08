@@ -780,12 +780,12 @@ dd{
     width: 1007px;height: 555px;
     background: url(../imgs/Phone.png)no-repeat 0 0;
     background-size: 145px 295px;
-    transform:translateX(400px) translateY(-385px);
+    transform:translateX(403px) translateY(-385px);
     transform-origin: left;
 }
 .fifth>.content_R>div.figma>.figma_p>.figma_p2>div>img{/* 피그마 주방 페이지*/
     width: 130px;position: relative;
-    transform: translateX(-129px) translateY(-378px);
+    transform: translateX(-126px) translateY(-378px);
     border-radius: 13px;
 }
 .fifth>.content_R>div.figma>.figma_p>.figma_p3{
@@ -805,15 +805,13 @@ dd{
     border-radius: 13px;
 }
 .fifth>.content_R>dl{
-    transform:translateX(17px) translateY(-450px);
-}
-.fifth>.content_R>dl{
-    transform:translateX(10px) translateY(-900px);
+    transform:translateX(18px) translateY(-900px);
 }
 /*   ryan     */
 .six{
     position: relative;
     height: 930px;
+    margin-top: -500px;
 }
 .six>.content_R::before{
     display: none;
