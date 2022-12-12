@@ -91,6 +91,7 @@ dd{
 .content_R::before{ /*원형 */
     content: "";position: absolute; top: -450px; left: 250px; 
     width: 700px; height: 700px; 
+    scale: 1;
     z-index: -3;
     background: #F8F1EB;
     border-radius: 50%;  
@@ -139,8 +140,6 @@ dd{
   } 
   .btn-3 {/*호버 전*/
     background: #fff;
-    background: linear-gradient(45deg,rgb(221, 220, 220)50%);
-
     width: 130px;
     height: 40px;
     line-height: 42px;
@@ -148,11 +147,15 @@ dd{
     border: none;
     
   }
-  .btn-3 span {
+  .btn-3> span {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
+  }
+  .btn-3> span>a{
+    width: 100%;height: 100%;
+    display: inline-block;
   }
   .btn-3:before,
   .btn-3:after { /*호버 후*/
@@ -261,6 +264,105 @@ dd{
       transform: translateY(0);
     }
   }
+  /* -------------------------------------------------------웹접근성검사 */
+  .frame>#popup{
+    display: none;
+  }
+  .frame>#popup + label + div {
+    opacity: 0;visibility: hidden;transition: all 0.5s;
+   }
+   .frame>#popup:checked + label + div {
+     opacity: 1;visibility: visible;
+   }
+   .frame>#popup + label {
+     color: black;
+   }
+   .frame>#popup + label + div{
+     position: absolute;
+     width:100%;height: 100%;
+     top: 0;left: 0;
+     z-index: 100;
+   }
+   .frame>#popup + label + div > div {
+     position: absolute;
+     top: 50%;left: 50%;
+     transform: translate(-50%, -50%);
+     width: 1442px;height: 776px;
+     background-color: #fff;
+     z-index: 2;
+   }
+   .frame>#popup + label + div > div > img{
+      top: 0;left: 0;position: absolute;
+      width: 1400px;
+   }
+   .frame>#popup + label + div > div > label {
+     position: absolute;
+     top: 0%;right: 0%;
+     transform: translate(40%,-40%);
+     width: 50px;height: 50px;
+     padding: 10px;box-sizing: border-box;
+     background: black;color: #fff;
+     border: 1.5px solid rgb(71, 71, 71);
+     border-radius: 50%;
+     z-index: 1;
+   }
+   .frame>#popup + label + div > label{
+     position: absolute;
+     top: 0;left: 0;
+     width: 100%;height: 100%;
+     background: rgba(0,0,0,.8);
+     z-index: 1;
+   }
+/*popup2*/
+   .frame>#popup2{
+    display: none;
+  }
+  .frame>#popup2 + label + div {
+    opacity: 0;visibility: hidden;transition: all 0.5s;
+   }
+   .frame>#popup2:checked + label + div {
+     opacity: 1;visibility: visible;
+   }
+   .frame>#popup2 + label {
+     color: black;
+   }
+   .frame>#popup2 + label + div{
+     position: absolute;
+     width:100%;height: 100%;
+     top: 0;left: 0;
+     z-index: 100;
+   }
+   .frame>#popup2 + label + div > div {
+     position: absolute;
+     top: 50%;left: 50%;
+     transform: translate(-50%, -50%);
+     width: 1442px;height: 776px;
+     background-color: #fff;
+     z-index: 2;
+   }
+   .frame>#popup2 + label + div > div > img{
+      top: 0;left: 0;position: absolute;
+      width: 1400px;
+   }
+   .frame>#popup2 + label + div > div > label {
+     position: absolute;
+     top: 0%;right: 0%;
+     transform: translate(40%,-40%);
+     width: 50px;height: 50px;
+     padding: 10px;box-sizing: border-box;
+     background: black;color: #fff;
+     border: 1.5px solid rgb(71, 71, 71);
+     border-radius: 50%;
+     z-index: 1;
+   }
+   .frame>#popup2 + label + div > label{
+     position: absolute;
+     top: 0;left: 0;
+     width: 100%;height: 100%;
+     background: rgba(0,0,0,.8);
+     z-index: 1;
+   }
+ 
 /* // common // */
 /* 메인 */
 .main{
@@ -315,7 +417,7 @@ dd{
     }
 }
 .main_inner>p:nth-last-of-type(1){
-    transform: translateX(2px) translateY(150px);
+    transform: translateX(2px) translateY(140px);
     font-size: 17.5px;
     text-align: center;  
     z-index: 1; 
@@ -326,7 +428,7 @@ dd{
         transform:translateX(2px) translateY(190px);
     }
     100%{
-        transform:translateX(2px) translateY(150px);
+        transform:translateX(2px) translateY(140px);
 
     }
 }
@@ -516,9 +618,10 @@ dd{
 .fir>.content_R>div.display>.main_pag>div{ overflow: hidden;
     width: 350px;height: 250px;position: absolute;  
     z-index: 3;border-radius: 8px; 
-    transform:translateX(430px) translateY(-1365px);
+    transform:translateX(428px) translateY(-1365px);
 }  
 .fir>.content_R>div.display>.main_pag>div>img{/*삼전 메인 */
+    width: 350px; object-fit: contain;
     animation: main_pag 10s ease-in-out infinite alternate;   
 }
 @keyframes main_pag{/*삼전 메인 애니메이션*/
@@ -526,7 +629,7 @@ dd{
         transform:translateY(0);
     }
     100% {
-        transform: translateY(-455px);
+        transform: translateY(-765px);
     }
 }
 .fir>.content_R>dl{
@@ -648,7 +751,7 @@ dd{
     overflow: hidden;
 }
 .thir>.content_R>dl>dt, .thir>.content_R>dl>dd{
-    transform:translateX(540px) translateY(30px);
+    transform:translateX(540px) translateY(20px);
 }
 .thir>.content_R>dl>div>img{/*일룸 페이지*/
     position: absolute;
@@ -747,74 +850,38 @@ dd{
         transform:translateX(-68px) translateY(0);
     }
     100%{
-        transform:translateX(-68px) translateY(-1375px);
+        transform:translateX(-68px) translateY(-1780px);
     }
 }
-
+ 
 .fourth>.content_R>dl{
-    transform: translateY(-370px);
+    transform: translateY(-335px);margin-top: -15px;
 }
 /* 피그마 앱 기획 */
 .fifth>.content_R>div.figma{
-    transform:translateX(-50px) translateY(-150px);
+    display: flex;
+    transform:translateX(240px) translateY(-400px);
 }
-.fifth>.content_R>div.figma>.figma_p::before{/* 피그마 런치 목업*/
-    content: "";display: block;position: absolute;
-    width: 1007px;height: 555px;
-    background: url(../imgs/Phone.png)no-repeat 0 0;
-    background-size: 145px 295px;
-    transform:translateX(577px) translateY(-105px);
-    transform-origin: left;
+.fifth>.content_R>div.figma>div{
+   padding:0 5px;
 }
-
-.fifth>.content_R>div.figma>.figma_p>.figma_p1>img{/* 피그마 런치 페이지*/
-    width: 130px;position: relative;
-    transform: translateX(48px) translateY(-97px);
-    border-radius: 13px;
-}
-.fifth>.content_R>div.figma>.figma_p>.figma_p2{
-    transform: translateX(20px);
-}
-.fifth>.content_R>div.figma>.figma_p>.figma_p2::before{/* 피그마 주방 목업*/
-    content: "";display: block;position: absolute;
-    width: 1007px;height: 555px;
-    background: url(../imgs/Phone.png)no-repeat 0 0;
-    background-size: 145px 295px;
-    transform:translateX(403px) translateY(-385px);
-    transform-origin: left;
-}
-.fifth>.content_R>div.figma>.figma_p>.figma_p2>div>img{/* 피그마 주방 페이지*/
-    width: 130px;position: relative;
-    transform: translateX(-126px) translateY(-378px);
-    border-radius: 13px;
-}
-.fifth>.content_R>div.figma>.figma_p>.figma_p3{
-    transform: translateX(330px) translateY(-280px);
-}
-.fifth>.content_R>div.figma>.figma_p>.figma_p3::before{/* 피그마 상세 목업*/
-    content: "";display: block;position: absolute;
-    width: 1007px;height: 555px;
-    background: url(../imgs/Phone.png)no-repeat 0 0;
-    background-size: 145px 295px;
-    transform:translateX(400px) translateY(-385px);
-    transform-origin: left;
-}
-.fifth>.content_R>div.figma>.figma_p>.figma_p3>div>img{/* 피그마 상세 페이지*/
-    width: 130px;position: relative;
-    transform: translateX(-129px) translateY(-378px);
-    border-radius: 13px;
+.fifth>.content_R>div.figma>div>img{
+    width: 230px;
 }
 .fifth>.content_R>dl{
-    transform:translateX(18px) translateY(-900px);
+    transform:translateX(18px) translateY(-500px);
 }
 /*   ryan     */
 .six{
     position: relative;
     height: 930px;
-    margin-top: -500px;
+    margin-top: -100px;
 }
 .six>.content_R::before{
     display: none;
+}
+.six>.content_R{
+    margin-top: 100px;
 }
 #ryan{
     transform: translateX(-250px) translateY(50px);
@@ -853,5 +920,4 @@ dd{
     transform: translateX(-40px);
    
 }
-
 

@@ -19,4 +19,3 @@ observer.observe(content[3])
 observer.observe(content[4])
 observer.observe(content[5])
 
-
