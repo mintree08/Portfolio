@@ -731,10 +731,10 @@ dd{
 }
 /* //CJONE// */
 /* 일룸 placer */
-.thir>.content_R>dl{
+/* .thir>.content_R>dl{
     left: -250px;
 }
-.thir>.content_R>dl::before{/* 일룸 노트북 목업*/
+.thir>.content_R>dl::before{/* 일룸 노트북 목업
     content: '';display: block;position: absolute;
     width: 1007px;height: 550px;
     background: url(../imgs/notebook.png) no-repeat 0 0;
@@ -753,7 +753,7 @@ dd{
 .thir>.content_R>dl>dt, .thir>.content_R>dl>dd{
     transform:translateX(540px) translateY(20px);
 }
-.thir>.content_R>dl>div>img{/*일룸 페이지*/
+.thir>.content_R>dl>div>img{/*일룸 페이지
     position: absolute;
     width: 590px;
     object-fit: contain;
@@ -766,7 +766,7 @@ dd{
     100%{
         transform: translateX(-290px) translateY(-4320px);
     }
-}
+} */
 /* LocknLock */
 .fourth>.content_R>div.lnl_pg{
     transform:translateX(140px) translateY(-420px);
